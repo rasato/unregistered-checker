@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>登録</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"
+            th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"/>
+    <script type="text/javascript"
+            src="../../static/js/data_upload.js" th:src="@{/js/data_upload.js}"></script>
+</head>
+<body>
+<div>
+    <form th:action="@{/unregistered-checker/uploadFile}" id="data_upload_form"
+          enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <label>ファイル種類</label>
+            <select id="select_file_type" name="select_file_type">
+                <option value="login-user">ログインユーザ</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>ファイルパス</label>
+            <input type="file" id="upload_file" name="upload_file"/>
+        </div>
+        <div class="form-group">
+            <input id="data_upload_button" type="submit" value="アップロード"/>
+        </div>
+    </form>
+    <form th:action="@{/unregistered-checker/register}" method="post">
+        <input type="submit" name="goToMenu" value="戻る"/>
+    </form>
+</div>
+</body>
+</html>

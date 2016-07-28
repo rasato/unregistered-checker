@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>チェック</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap/min.css}"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"
+            th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"/>
+    <script type="text/javascript"
+            src="../../static/js/data_upload.js" th:src="@{/js/data_upload.js}"></script>
+</head>
+<body>
+<div>
+    <form th:action="@{/unregistered-checker/goToMenu}" method="post">
+        <input type="submit" value="戻る"/>
+    </form>
+    <form th:action="@{/unregistered-checker/check}" method="get">
+        <input type="submit" value="チェック"/>
+    </form>
+</div>
+</body>
+</html>
