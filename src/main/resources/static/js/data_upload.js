@@ -19,8 +19,8 @@ $(function() {
                 contentType: false,
             }).done(function(data) {
                 alert("アップロードが完了しました。");
-                var link = '<a id="imgLink" href="' + data.toString() + '"/>';
-                var img = '<img src = "' + data.toString() + '" height="100" width ="100"/>'
+                var link = '<a id="imgLink" href="/uploadfile/' + data.toString() + '"/>';
+                var img = '<img src = "/thumbnail/' + data.toString() + '"/>'
                 $("#upload_file").after(link);
                 $("#imgLink").append(img);
             }).fail(function(XMLHttpRequest, textStatus, errorThrown) {

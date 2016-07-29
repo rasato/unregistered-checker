@@ -1,5 +1,6 @@
 package ch72.net.api;
 
+import ch72.net.util.Resizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.BufferedImageHttpMessageConverter;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,7 +44,11 @@ public class RegisterController {
                     new BufferedOutputStream(new FileOutputStream(uploadFile));
             uploadFileStream.write(bytes);
             uploadFileStream.close();
-            return "/uploadfile/" + uploadFile.getName();
+
+            // make thumbnail
+            Resizer.resize(uploadFile.toString());
+
+            return uploadFile.getName();
         } catch (IOException e) {
             e.printStackTrace();
             throw new IllegalStateException(e);
