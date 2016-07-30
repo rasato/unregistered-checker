@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>menu</title>
+    <link rel="stylesheet" type="text/css"
+          href="../../static/css/style.css"
+          th:href="@{/css/style.css}"/>
+    <script type="text/javascript"
+            src="../../static/js/sample.js" th:src="@{/js/sample.js}"></script>
+</head>
+<body>
+<div>
+    <form th:action="@{/service}" method="get">
+        <input type="submit" value="フィルタを使用する"/>
+    </form>
+    <form th:action="@{/manage}" method="get">
+        <input type="submit" value="フィルタを管理する"/>
+    </form>
+</div>
+</body>
+</html>

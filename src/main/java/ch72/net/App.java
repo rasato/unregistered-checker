@@ -13,12 +13,6 @@ import org.springframework.http.converter.BufferedImageHttpMessageConverter;
 @SpringBootApplication
 public class App
 {
-    @Bean
-    BufferedImageHttpMessageConverter bufferedImageHttpMessageConverter() {
-        return new BufferedImageHttpMessageConverter();
-    }
-
-
     public static void main( String[] args )
     {
         SpringApplication.run(App.class, args);

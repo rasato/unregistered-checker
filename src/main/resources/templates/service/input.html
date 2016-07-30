@@ -2,33 +2,33 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>登録</title>
+    <title>filter target</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"
             th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"/>
     <script type="text/javascript"
-            src="../../static/js/data_upload.js" th:src="@{/js/data_upload.js}"></script>
+            src="../../static/js/service.js" th:src="@{/js/service.js}"></script>
 </head>
 <body>
 <div>
-    <form th:action="@{/unregistered-checker/uploadFile}" id="data_upload_form"
+    <form th:action="@{/service/apply}" id="apply_filter_form"
           enctype="multipart/form-data" method="post">
         <div class="form-group">
-            <label>ファイル種類</label>
-            <select id="select_file_type" name="select_file_type">
+            <label>使用フィルター</label>
+            <select id="select_filter_type" name="select_filter_type">
                 <option value="login-user">ログインユーザ</option>
             </select>
         </div>
         <div class="form-group">
-            <label>ファイルパス</label>
-            <input type="file" id="upload_file" name="upload_file"/>
+            <label>対象ファイル</label>
+            <input type="file" id="target_file" name="target_file"/>
         </div>
         <div class="form-group">
-            <input id="data_upload_button" type="submit" value="アップロード"/>
+            <input id="apply_filter_button" type="submit" value="フィルターを適用する"/>
         </div>
     </form>
-    <form th:action="@{/unregistered-checker/register}" method="post">
+    <form th:action="@{/menu}" method="post">
         <input type="submit" name="goToMenu" value="戻る"/>
     </form>
 </div>
